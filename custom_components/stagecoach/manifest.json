@@ -1,0 +1,16 @@
+{
+  "domain": "stagecoach",
+  "name": "Stagecoach",
+  "codeowners": [
+    "@rtm516"
+  ],
+  "config_flow": true,
+  "dependencies": [],
+  "documentation": "https://github.com/rtm516/HomeAssistant-Stagecoach",
+  "homekit": {},
+  "iot_class": "cloud_polling",
+  "issue_tracker": "https://github.com/rtm516/HomeAssistant-Stagecoach/issues",
+  "ssdp": [],
+  "version": "1.0.0",
+  "zeroconf": []
+}

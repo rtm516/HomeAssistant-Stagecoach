@@ -1,9 +1,9 @@
 {
-  "title": "First Bus",
+  "title": "Stagecoach",
   "config": {
     "step": {
       "user": {
-        "title": "First Bus Stop",
+        "title": "Stagecoach Bus Stop",
         "description": "Setup your bus stop information.",
         "data": {
           "Name": "Name",
@@ -25,7 +25,7 @@
   "options": {
     "step": {
       "user": {
-        "title": "First Bus Stop",
+        "title": "Stagecoach Bus Stop",
         "description": "Update your bus stop information.",
         "data": {
           "Buses": "Buses"

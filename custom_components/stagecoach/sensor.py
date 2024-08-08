@@ -13,7 +13,7 @@ from .const import (
   MINUTES_BETWEEN_UPDATES
 )
 
-from .api_client import (FirstBusApiClient)
+from .api_client import (StagecoachApiClient)
 from .utils import (
   get_next_bus,
   get_buses,
@@ -27,17 +27,17 @@ SCAN_INTERVAL = timedelta(minutes=1)
 async def async_setup_entry(hass, entry, async_add_entities):
   """Setup sensors based on our entry"""
 
-  entities = [FirstBusNextBus(entry.data)]
+  entities = [StagecoachNextBus(entry.data)]
 
   async_add_entities(entities, True)
 
-class FirstBusNextBus(SensorEntity):
+class StagecoachNextBus(SensorEntity):
   """Sensor for the next bus."""
 
   def __init__(self, data):
     """Init sensor."""
 
-    self._client = FirstBusApiClient()
+    self._client = StagecoachApiClient()
     self._data = data
     self._buses = []
     self._attributes = {}
@@ -48,12 +48,12 @@ class FirstBusNextBus(SensorEntity):
   @property
   def unique_id(self):
     """The id of the sensor."""
-    return f"first_bus_{self._data[CONFIG_STOP]}_next_bus"
+    return f"stagecoach_{self._data[CONFIG_STOP]}_next_bus"
     
   @property
   def name(self):
     """Name of the sensor."""
-    return f"First Bus {self._data[CONFIG_NAME]} Next Bus"
+    return f"Stagecoach {self._data[CONFIG_NAME]} Next Bus"
 
   @property
   def icon(self):

@@ -17,7 +17,7 @@ from .config import merge_config, validate_config
 
 _LOGGER = logging.getLogger(__name__)
 
-class FirstBusConfigFlow(ConfigFlow, domain=DOMAIN): 
+class StagecoachConfigFlow(ConfigFlow, domain=DOMAIN): 
   """Config flow."""
 
   VERSION = 1

@@ -1,6 +1,6 @@
 import voluptuous as vol
 
-DOMAIN = "first_bus"
+DOMAIN = "stagecoach"
 
 MINUTES_BETWEEN_UPDATES = 5
 
