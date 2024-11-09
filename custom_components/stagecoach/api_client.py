@@ -43,6 +43,8 @@ class StagecoachApiClient:
         'Content-Type': 'application/x-www-form-urlencoded', # This looks wrong but it's what the app sends
       }, data="{\"stopMonitorRequest\":{\"lookAheadMinutes\":60,\"stopMonitorQueries\":{\"stopMonitorQuery\":[{\"stopPointLabel\":\"" + stop + "\",\"servicesFilters\":{\"servicesFilter\":[]}}]},\"header\":{\"channel\":\"mobile\",\"ipAddress\":\"\",\"retailOperation\":\"ukbus\"}}}") as response:
         data = await response.json()
+        if (len(data['stopMonitors']) == 0):
+          return []
         return data['stopMonitors']['stopMonitor'][0]['monitoredCalls']['monitoredCall']
 
   def _reformat_time(self, time_input):
