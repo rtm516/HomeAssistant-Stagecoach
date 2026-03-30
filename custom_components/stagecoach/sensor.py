@@ -93,7 +93,10 @@ class StagecoachNextBus(SensorEntity):
       self._attributes = {}
     
     self._attributes["stop"] = self._data[CONFIG_STOP]
-    self._attributes["buses"] = self._buses
+    self._attributes["buses"] = [
+        bus for bus in self._buses
+        if bus["service_number"] in self._data[CONFIG_BUSES]
+    ]
 
     if self._data_last_updated is not None:
       self._attributes["data_last_updated"] = self._data_last_updated
